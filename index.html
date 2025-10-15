@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Tower (XVI)</title>
+  <style>
+    
+    @font-face {
+      font-family: 'WexyFont';
+      src: url('Wexyfontps.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0a0a0a;
+      color: #e0e0e0;
+      font-family: 'WexyFont', serif;
+      text-align: center;
+      background-image: radial-gradient(circle at center, #111 0%, #000 100%);
+      overflow-x: hidden;
+      animation: fadein 3s ease-in;
+    }
+
+    .container {
+      padding: 5vh 2vw;
+    }
+
+    img {
+      max-width: 80%;
+      height: auto;
+      margin: 40px 0;
+      filter: drop-shadow(0 0 20px #444);
+      opacity: 0;
+      animation: appear 4s ease-in forwards 1s;
+    }
+
+    h1 {
+      font-size: 2em;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      animation: flicker 3s infinite;
+      color: #d8c26a;
+      text-shadow: 0 0 15px #bfb06a;
+    }
+
+    p {
+      width: 80%;
+      margin: 20px auto;
+      line-height: 1.6;
+      font-size: 1.1em;
+      color: #cfcfcf;
+      opacity: 0;
+      animation: fadeText 3s ease-in forwards 2s;
+    }
+
+    .note {
+      font-style: italic;
+      opacity: 0.7;
+      margin-top: 30px;
+    }
+
+    @keyframes flicker {
+      0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+      20%, 24%, 55% { opacity: 0.3; }
+    }
+
+    @keyframes fadein {
+      from { opacity: 0; } 
+      to { opacity: 1; }
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: scale(1.05); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeText {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="Goetia.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    <h1>The Tower (XVI)</h1>
+    <img src="TheTower.png" alt="The Tower">
+    <p>…Ти бачив те, чого не мала бачити навіть вона.<br>
+    Ця карта — не символ і не вирок. Це нагадування.<br>
+    Запам’ятай її, навіть якщо не розумієш — розуміння прийде пізніше.</p>
+
+    <p>Ти дійшов туди, де я колись зупинилась.<br>
+    Прошепочи у відповідь: <b>The Tower (XVI)</b>.<br>
+    Це не пароль. Це доказ, що ти теж бачив світло серед руїн.</p>
+
+  </div>
+</body>
+</html>
