@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Tower (XVI)</title>
   <style>
-    
     @font-face {
       font-family: 'WexyFont';
       src: url('Wexyfontps.otf') format('opentype');
@@ -21,12 +20,31 @@
       font-family: 'WexyFont', serif;
       text-align: center;
       background-image: radial-gradient(circle at center, #111 0%, #000 100%);
-      overflow-x: hidden;
+      overflow: hidden;
       animation: fadein 3s ease-in;
     }
 
+    .fog {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://i.imgur.com/w9C7nWf.png') repeat;
+      opacity: 0.2;
+      animation: fogmove 60s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes fogmove {
+      0% { background-position: 0 0; }
+      100% { background-position: 2000px 1000px; }
+    }
+
     .container {
-      padding: 5vh 2vw;
+      position: relative;
+      z-index: 2;
+      padding: 8vh 4vw;
     }
 
     img {
@@ -39,20 +57,20 @@
     }
 
     h1 {
-      font-size: 2em;
+      font-size: 3.5em;
       letter-spacing: 3px;
       text-transform: uppercase;
       animation: flicker 3s infinite;
       color: #d8c26a;
-      text-shadow: 0 0 15px #bfb06a;
+      text-shadow: 0 0 20px #bfb06a;
     }
 
     p {
-      width: 80%;
-      margin: 20px auto;
-      line-height: 1.6;
-      font-size: 1.1em;
-      color: #cfcfcf;
+      width: 85%;
+      margin: 40px auto;
+      line-height: 1.8;
+      font-size: 2.5em;
+      color: #dcdcdc;
       opacity: 0;
       animation: fadeText 3s ease-in forwards 2s;
     }
@@ -60,7 +78,7 @@
     .note {
       font-style: italic;
       opacity: 0.7;
-      margin-top: 30px;
+      margin-top: 50px;
     }
 
     @keyframes flicker {
@@ -85,21 +103,36 @@
   </style>
 </head>
 <body>
-  <audio autoplay loop>
+  <!-- Фоновий туман -->
+  <div class="fog"></div>
+
+  <!-- Музика -->
+  <audio id="bg-music" loop>
     <source src="Goetia.mp3" type="audio/mpeg">
   </audio>
+
+  <script>
+    // Автоматичний запуск звуку після взаємодії
+    document.addEventListener('click', function playMusic() {
+      const music = document.getElementById('bg-music');
+      music.play().catch(() => {});
+      document.removeEventListener('click', playMusic);
+    });
+  </script>
 
   <div class="container">
     <h1>The Tower (XVI)</h1>
     <img src="TheTower.png" alt="The Tower">
+    
     <p>…Ти бачив те, чого не мала бачити навіть вона.<br>
     Ця карта — не символ і не вирок. Це нагадування.<br>
     Запам’ятай її, навіть якщо не розумієш — розуміння прийде пізніше.</p>
 
     <p>Ти дійшов туди, де я колись зупинилась.<br>
-    Прошепочи у відповідь: <b>The Tower (XVI)</b>.<br>
+    Якщо почуєш моє ім’я — прошепочи у відповідь: <b>The Tower (XVI)</b>.<br>
     Це не пароль. Це доказ, що ти теж бачив світло серед руїн.</p>
 
+    <p class="note">(у тіні між рядків щось ворушиться… сторінка дихає, ніби жива)</p>
   </div>
 </body>
 </html>
