@@ -13,77 +13,59 @@
     }
 
     body {
-  margin: 0;
-  padding: 0;
-  background-color: #0a0a0a;
-  color: #e0e0e0;
-  font-family: 'WexyFont', serif;
-  text-align: center;
-  background-image: radial-gradient(circle at center, #111 0%, #000 100%);
-  overflow-x: hidden;
-  overflow-y: auto; /* ✅ тепер сторінка скролиться */
-  animation: fadein 3s ease-in;
-}
+      margin: 0;
+      padding: 0;
+      background-color: #0a0a0a;
+      color: #f1f1f1;
+      font-family: 'WexyFont', serif;
+      text-align: center;
+      background-image: radial-gradient(circle at center, #111 0%, #000 100%);
+      overflow-x: hidden;
+      overflow-y: auto;
+      animation: fadein 3s ease-in;
     }
-
-    .fog {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  background: url('https://i.ibb.co/Bzt3YfM/fog-texture.png') repeat;
-  opacity: 0.15;
-  animation: fogmove 90s linear infinite;
-  pointer-events: none;
-  z-index: 1;
-}
-
-@keyframes fogmove {
-  0% { background-position: 0 0; }
-  100% { background-position: 2500px 1000px; }
-}
 
     .container {
       position: relative;
       z-index: 2;
-      padding: 8vh 4vw;
+      padding: 10vh 4vw;
     }
 
     img {
-      max-width: 80%;
+      max-width: 85%;
       height: auto;
-      margin: 40px 0;
-      filter: drop-shadow(0 0 20px #444);
+      margin: 60px 0;
+      filter: drop-shadow(0 0 30px #333);
       opacity: 0;
       animation: appear 4s ease-in forwards 1s;
     }
 
     h1 {
-  font-size: 5em; /* було 3.5em */
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  animation: flicker 3s infinite;
-  color: #e7d58b;
-  text-shadow: 0 0 25px #d4c46a;
-  margin-bottom: 50px;
-}
+      font-size: 5em; /* більше заголовок */
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      animation: flicker 3s infinite;
+      color: #e7d58b;
+      text-shadow: 0 0 25px #d4c46a;
+      margin-bottom: 50px;
+    }
 
     p {
-  width: 80%;
-  margin: 60px auto;
-  line-height: 1.9;
-  font-size: 2.8em; /* реально велике */
-  color: #f2f2f2;
-  text-shadow: 0 0 10px rgba(255,255,255,0.15);
-  opacity: 0;
-  animation: fadeText 3s ease-in forwards 2s;
-}
+      width: 80%;
+      margin: 60px auto;
+      line-height: 1.9;
+      font-size: 2.8em; /* 🔥 збільшено текст */
+      color: #f2f2f2;
+      text-shadow: 0 0 10px rgba(255,255,255,0.15);
+      opacity: 0;
+      animation: fadeText 3s ease-in forwards 2s;
+    }
 
     .note {
       font-style: italic;
       opacity: 0.7;
       margin-top: 50px;
+      font-size: 2em;
     }
 
     @keyframes flicker {
@@ -108,16 +90,13 @@
   </style>
 </head>
 <body>
-  <!-- Фоновий туман -->
-  <div class="fog"></div>
 
   <!-- Музика -->
   <audio id="bg-music" loop>
     <source src="Goetia.mp3" type="audio/mpeg">
   </audio>
-
   <script>
-    // Автоматичний запуск звуку після взаємодії
+    // Автоматичний запуск після першої взаємодії
     document.addEventListener('click', function playMusic() {
       const music = document.getElementById('bg-music');
       music.play().catch(() => {});
@@ -139,7 +118,6 @@
 
     <p class="note">(у тіні між рядків щось ворушиться… сторінка дихає, ніби жива)</p>
   </div>
+
 </body>
 </html>
-
-
